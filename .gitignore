@@ -2,3 +2,5 @@ env
 dist
 .vscode*
 TODO
+__pycache__
+*.egg
