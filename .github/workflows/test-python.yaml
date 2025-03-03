@@ -1,0 +1,62 @@
+# Workflow name.
+name: test-python
+# Run workflow on specified requirements.
+on:
+  push:
+  workflow_run:
+    # Dependent workflow.
+    workflows: ['prerequisites']
+    # Run when completed
+    types: [completed]
+# Jobs to run in this workflow.
+jobs:
+  # Run only if triggering workflow was successfull.
+  on-success:
+    runs-on: ${{ matrix.os }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: ["ubuntu-latest", "windows-latest"]
+        python-version: ["3.9", "3.10", "3.11"]
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+
+      - name: Install
+        run: |
+          pip install --upgrade pip
+          pip install -e .
+          pip install -r requirements.txt          
+
+      - name: Run tests
+        run: python -m unittest discover -s ./tests/
+  # Run only if triggering workflow was a failure.
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: ["ubuntu-latest", "windows-latest"]
+        python-version: ["3.9", "3.10", "3.11"]
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64       
+
+      - name: Run tests
+        run: python -m unittest discover -s ./tests/
