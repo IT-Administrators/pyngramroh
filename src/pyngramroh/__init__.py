@@ -14,4 +14,4 @@ License: MIT
 
 """
 # Functions an classes that can be imported by calling from <modulename> import *
-__all__ = ["Monogram"]
+__all__ = ["NGram"]

@@ -1,5 +1,4 @@
-"""Adds the current working directory to the PYTHONPATH
-variable, to make the package accessible for the unittest script."""
+"""Adds the current working directory to the PYTHONPATH variable, to make the package accessible for the unittest script."""
 
 import sys
 import os
