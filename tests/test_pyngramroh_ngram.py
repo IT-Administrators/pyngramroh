@@ -35,7 +35,7 @@ class TestPyngramrohNGram_MonoGram(unittest.TestCase):
         self.assertEqual(trig.generate_ngram(), self.reslistn3)
     
     # Test multigram creation.
-    def test_pyngramroh_trigram(self):
+    def test_pyngramroh_multigram(self):
         multig = ng.NGram(self.testlist[0],4)
         self.assertEqual(multig.generate_ngram(), self.reslistn4)
         multig = ng.NGram(self.testlist[0],5)
