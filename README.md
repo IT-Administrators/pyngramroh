@@ -5,7 +5,7 @@
 ![GitHub License](https://img.shields.io/github/license/IT-Administrators/pyngramroh)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/pyngramroh)
 [![Publish PyPi](https://github.com/IT-Administrators/pyngramroh/actions/workflows/release.yaml/badge.svg?branch=main)](https://github.com/IT-Administrators/pyngramroh/actions/workflows/release.yaml)
-[![CI](https://github.com/IT-Administrators/pyngramroh/actions/workflows/ci.yaml/badge.svg)](https://github.com/IT-Administrators/pyngramroh/actions/workflows/CI.yaml)
+[![CI](https://github.com/IT-Administrators/pyngramroh/actions/workflows/ci.yaml/badge.svg)](https://github.com/IT-Administrators/pyngramroh/actions/workflows/ci.yaml)
 
 # pyngramroh
 
