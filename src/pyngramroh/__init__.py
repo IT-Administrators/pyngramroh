@@ -4,10 +4,12 @@ Pyngramroh
 A cross plattform ngram module.
 
 Usage:
-    import pyngramroh
+    from pyngramroh import *
+    ng = NGram("Demo,2,True)
+    ng.create_ngram()
     
 Returns:
-
+    ['_D', 'De', 'em', 'mo', 'o_']
 
 Author: IT-Administrators
 License: MIT
