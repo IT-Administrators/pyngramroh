@@ -9,7 +9,7 @@ jobs:
       fail-fast: true
       matrix:
         os: ["ubuntu-latest", "windows-latest"]
-        python-version: ["3.x"] # Python versions the pacakge is tested with.
+        python-version: ["3.x","3.10","3.11","3.12","3.13"] # Python versions the package is tested with.
 
     steps:
       - name: Checkout source
